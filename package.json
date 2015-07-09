@@ -1,0 +1,22 @@
+{
+  "name": "gulp-dabbling",
+  "version": "1.0.0",
+  "description": "Dabbling around with gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanTylkowski/gulp-dabbling.git"
+  },
+  "keywords": [
+    "glpdab"
+  ],
+  "author": "Dan Tylkowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanTylkowski/gulp-dabbling/issues"
+  },
+  "homepage": "https://github.com/DanTylkowski/gulp-dabbling#readme"
+}
