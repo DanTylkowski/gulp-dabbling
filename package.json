@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/DanTylkowski/gulp-dabbling/issues"
   },
-  "homepage": "https://github.com/DanTylkowski/gulp-dabbling#readme"
+  "homepage": "https://github.com/DanTylkowski/gulp-dabbling#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
