@@ -7,7 +7,7 @@ gulp.task(
 			'delete',
 			[
 				'sass',
-				//'scripts',
+				'scripts',
 				//'images',
 				//'copy:fonts'
 			],
