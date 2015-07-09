@@ -6,7 +6,7 @@ gulp.task(
 		runSequence(
 			'delete',
 			[
-				//'sass',
+				'sass',
 				//'scripts',
 				//'images',
 				//'copy:fonts'

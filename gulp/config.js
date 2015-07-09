@@ -44,5 +44,13 @@ module.exports = {
 			'android 4'
 		],
 		cascade: true
+	},
+	browserify: {
+		debug: true,
+		bundleConfigs: {
+			entries: './' + srcAssets + '/js/main.js',
+			dest: developmentAssets + '/js',
+			outputName: 'main.js'
+		}
 	}
 };
