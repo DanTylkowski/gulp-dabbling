@@ -1,7 +1,6 @@
 var gulp = require( 'gulp' );
 var runSequence = require( 'run-sequence' );
 
-
 gulp.task(
 	'build:production',
 	function( callback ) {
@@ -24,6 +23,7 @@ gulp.task(
 			],
 			'revision',
 			'rev:collect',
+			//'webp', //Not sure if it's supported server side
 			callback
 		);
 	}

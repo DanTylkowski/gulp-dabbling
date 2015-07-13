@@ -153,7 +153,7 @@ module.exports = {
 		],
 		dest: production
 	},
-	rsync: {
+	rsync: { // Dummy data, will configure later
 		src: production + '/**',
 		options: {
 			destination: '~/path/to/my/website/root/',
@@ -169,5 +169,10 @@ module.exports = {
 			exclude: [ '.DS_Store' ],
 			include: []
 		}
+	},
+	webp: {
+		src: productionAssets + '/images/**/*.{jpg,jpeg,png}',
+		dest: productionAssets + '/images/',
+		options: {}
 	}
 };
