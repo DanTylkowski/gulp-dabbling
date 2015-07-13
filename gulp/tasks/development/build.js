@@ -8,10 +8,10 @@ gulp.task(
 			[
 				'sass',
 				'scripts',
-				//'images',
-				//'copy:fonts'
+				'images',
+				//'copy:fonts' // probably not
 			],
-			//'base64',
+			'base64',
 			callback
 		);
 	}

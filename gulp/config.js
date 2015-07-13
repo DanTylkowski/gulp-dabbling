@@ -63,12 +63,111 @@ module.exports = {
 			dest: developmentAssets + '/fonts'
 		}
 	},*/
-
+	base64: {
+		src: developmentAssets + '/css/*.css',
+		dest: developmentAssets + '/css',
+		options: {
+			baseDir: build,
+			extensions: [ 'png' ],
+			maxImageSize: 20 * 1024, // bytes
+			debug: false
+		}
+	},
 	watch: {
 		sass: srcAssets + '/scss/**/*.{sass,scss}',
-		scripts: srcAssets + '/javascripts/**/*.js',
+		scripts: srcAssets + '/js/**/*.js',
 		images: srcAssets + '/images/**/*',
-		sprites: srcAssets + '/images/**/*.png',
-		svg: 'vectors/*.svg'
+		//svg: 'vectors/*.svg',
+		sprites: srcAssets + '/images/**/*.png'
+	},
+	/*sprites: { //Too much for now
+		src: srcAssets + '/images/sprites/icon/*.png',
+		dest: {
+			css: srcAssets + '/scss/base/',
+			image: srcAssets + '/images/sprites/'
+		},
+		options: {
+			cssName: '_sprites.scss',
+			cssFormat: 'css',
+			cssOpts: {
+				cssClass: function( item ) {
+					// If this is a hover sprite, name it as a hover one (e.g. 'home-hover' -> 'home:hover')
+					if( item.name.indexOf( '-hover' ) !== -1 ) {
+						return '.icon-' + item.name.replace( '-hover', ':hover' );
+					// Otherwise, use the name as the selector (e.g. 'home' -> 'home')
+					} else {
+						return '.icon-' + item.name;
+					}
+				}
+			},
+			imgName: 'icon-sprite.png',
+			imgPath: '/assets/images/sprites/icon-sprite.png'
+		}
+	},*/
+
+	optimize: {
+		css: {
+			src:  developmentAssets + '/css/*.css',
+			dest: productionAssets + '/css/',
+			options: {
+				keepSpecialComments: 0
+			}
+		},
+		js: {
+			src: developmentAssets + '/js/*.js',
+			dest: productionAssets + '/js/',
+			options: {}
+		},
+		images: {
+			src:  developmentAssets + '/images/**/*.{jpg,jpeg,png,gif}',
+			dest: productionAssets + '/images/',
+			options: {
+				optimizationLevel: 3,
+				progessive: true,
+				interlaced: true
+			}
+		}
+	},
+	revision: {
+		src: {
+			assets: [
+				productionAssets + '/css/*.css',
+				productionAssets + '/js/*.js',
+				productionAssets + '/images/**/*'
+			],
+			base: production
+		},
+		dest: {
+			assets: production,
+			manifest: {
+				name: 'manifest.json',
+				path: productionAssets
+			}
+		}
+	},
+	collect: {
+		src: [
+			productionAssets + '/manifest.json',
+			production + '/**/*.{html,xml,txt,json,css,js}',
+			'!' + production + '/feed.xml'
+		],
+		dest: production
+	},
+	rsync: {
+		src: production + '/**',
+		options: {
+			destination: '~/path/to/my/website/root/',
+			root: production,
+			hostname: 'mydomain.com',
+			username: 'user',
+			incremental: true,
+			progress: true,
+			relative: true,
+			emptyDirectories: true,
+			recursive: true,
+			clean: true,
+			exclude: [ '.DS_Store' ],
+			include: []
+		}
 	}
 };
