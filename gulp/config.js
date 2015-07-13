@@ -52,5 +52,23 @@ module.exports = {
 			dest: developmentAssets + '/js',
 			outputName: 'main.js'
 		}
+	},
+	images: {
+		src: srcAssets + '/images/**/*',
+		dest: developmentAssets + '/images'
+	},
+	/*copyfonts: { // probably not
+		development: {
+			src: srcAssets + '/fonts/*',
+			dest: developmentAssets + '/fonts'
+		}
+	},*/
+
+	watch: {
+		sass: srcAssets + '/scss/**/*.{sass,scss}',
+		scripts: srcAssets + '/javascripts/**/*.js',
+		images: srcAssets + '/images/**/*',
+		sprites: srcAssets + '/images/**/*.png',
+		svg: 'vectors/*.svg'
 	}
 };
