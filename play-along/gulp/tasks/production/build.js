@@ -18,7 +18,7 @@ gulp.task(
 				'optimize:css',
 				'optimize:js',
 				'optimize:images',
-				'optimize:html'//,
+				//'optimize:html',
 				//'copy:fonts:production'
 			],
 			'revision',

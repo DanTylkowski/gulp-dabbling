@@ -8,7 +8,7 @@ var developmentAssets = development + '/assets';
 var productionAssets = production + '/assets';
 
 module.exports = {
-	/*browsersync: {
+	browsersync: {
 		server: {
 			baseDir: [ development, build, src ]
 		},
@@ -17,8 +17,14 @@ module.exports = {
 			developmentAssets + '/js/*.js',
 			developmentAssets + '/iamges/*',
 			developmentAssets + '/fonts/*'
-		]
-	},*/
+		],
+		production: {
+			server: {
+				baseDir: [ production ]
+			},
+			port: 9998
+		}
+  	},
 	delete: {
 		src: [ developmentAssets ]
 	},
@@ -57,12 +63,12 @@ module.exports = {
 		src: srcAssets + '/images/**/*',
 		dest: developmentAssets + '/images'
 	},
-	/*copyfonts: { // probably not
+	copyfonts: { // probably not
 		development: {
 			src: srcAssets + '/fonts/*',
 			dest: developmentAssets + '/fonts'
 		}
-	},*/
+	},
 	base64: {
 		src: developmentAssets + '/css/*.css',
 		dest: developmentAssets + '/css',
@@ -80,7 +86,7 @@ module.exports = {
 		//svg: 'vectors/*.svg',
 		sprites: srcAssets + '/images/**/*.png'
 	},
-	/*sprites: { //Too much for now
+	sprites: { //Too much for now
 		src: srcAssets + '/images/sprites/icon/*.png',
 		dest: {
 			css: srcAssets + '/scss/base/',
@@ -103,7 +109,7 @@ module.exports = {
 			imgName: 'icon-sprite.png',
 			imgPath: '/assets/images/sprites/icon-sprite.png'
 		}
-	},*/
+	},
 
 	optimize: {
 		css: {

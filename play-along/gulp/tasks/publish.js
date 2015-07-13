@@ -4,5 +4,6 @@ gulp.task(
 	'publish',
 	[
 		//'browsersync:production'
+		'build:production'
 	]
 );
