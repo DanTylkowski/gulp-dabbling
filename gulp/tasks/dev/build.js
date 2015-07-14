@@ -8,10 +8,10 @@ gulp.task(
 			'delete',
 			[
 				'sass',
-				//'scripts',
-				//'images'
+				'scripts',
+				'images'
 			],
-			//'base64',
+			'base64',
 			callback
 		);
 	}

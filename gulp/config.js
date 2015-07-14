@@ -2,14 +2,19 @@ var src = 'src';
 var srcAssets = src + '/assets';
 
 var build = 'build';
-var dev = build + '/dev';
 var prod = build + '/prod';
-var devAssets = dev + '/assets';
+var devAssets = build + '/assets';
 var prodAssets = prod + '/assets';
+
+var cdnBase = '//i.annihil.us/u/prod/marvel/html_blocks_assets';
+var projectFolder = cdnBase + '/new-project';
 
 module.exports = {
 	delete: {
 		src: [ devAssets ]
+	},
+	deleteProd: {
+		src: [ prod ]
 	},
 	sass: {
 		src: srcAssets + '/sass/',
@@ -35,11 +40,19 @@ module.exports = {
 	},
 	browserify: {
 		debug: true,
-		bundleConfigs: {
-			entries: './' + srcAssets + '/js/main.js',
-			dest: devAssets + '/js',
-			outputName: 'main.js'
-		}
+		extensions: ['.coffee', '.hbs'],
+		bundleConfigs: [
+			{
+				entries: './' + srcAssets + '/js/application.js',
+				dest: devAssets + '/js',
+				outputName: 'application.js'
+			},
+			{
+				entries: './' + srcAssets + '/js/main.js',
+				dest: devAssets + '/js',
+				outputName: 'main.js'
+			}
+		]
 	},
 	images: {
 		src: srcAssets + '/images/**/*',
@@ -51,7 +64,7 @@ module.exports = {
 		options: {
 			baseDir: build,
 			extensions: [ 'png' ],
-			maxImageSize: 20 * 1024, // bytes
+			maxImageSize: 30 * 1024,
 			debug: false
 		}
 	},
@@ -103,11 +116,15 @@ module.exports = {
 	},
 	collect: {
 		src: [
-			prodAssets + '/manifest.json',
 			prod + '/**/*.{html,xml,txt,json,css,js}',
-			'!' + prod + '/feed.xml'
+			'html/**/*.html'
 		],
-		dest: prod
+		dest: prod,
+		options: {
+			dirReplacements: {
+				'/src': projectFolder
+			}
+		}
 	},
 	rsync: { // Dummy data, will configure later
 		src: prod + '/**',

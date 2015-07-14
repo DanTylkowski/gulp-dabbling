@@ -5,20 +5,21 @@ gulp.task(
 	'build:prod',
 	function( callback ) {
 		runSequence(
-			//'delete',
+			'delete',
+			'delete:prod',
 			[
-				//'sass',
-				//'scripts',
-				//'images'
+				'sass',
+				'scripts',
+				'images'
 			],
-			//'base64',
+			'base64',
 			[
-				//'optimize:css',
-				//'optimize:js',
-				//'optimize:images'
+				'optimize:css',
+				'optimize:js',
+				'optimize:images'
 			],
-			//'revision',
-			//'rev:collect',
+			'revision',
+			'rev:collect',
 			callback
 		);
 	}

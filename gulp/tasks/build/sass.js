@@ -4,6 +4,7 @@ var gulpFilter = require( 'gulp-filter' );
 var autoprefixer = require( 'gulp-autoprefixer' );
 var sourcemaps = require( 'gulp-sourcemaps' );
 var config = require( '../../config' );
+var handleErrors = require( '../../util/handleErrors' );
 
 gulp.task(
 	'sass',
@@ -13,12 +14,7 @@ gulp.task(
 		var filter = gulpFilter( [ '*.css', '!*.map' ] );
 
 		return sass( config.sass.src, sassConfig )
-			.on(
-				'error',
-				function( e ) {
-					console.error( 'Error', e.message );
-				}
-			)
+			.on( 'error', handleErrors )
 			.pipe( sourcemaps.init() )
 			.pipe( autoprefixer( config.autoprefixer ) )
 			.pipe( filter )
