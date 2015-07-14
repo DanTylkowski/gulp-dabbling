@@ -1,0 +1,33 @@
+{
+  "name": "gulp-dabbling",
+  "version": "1.0.0",
+  "description": "Dabbling around with gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanTylkowski/gulp-dabbling.git"
+  },
+  "keywords": [
+    "glpdab"
+  ],
+  "author": "Dan Tylkowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanTylkowski/gulp-dabbling/issues"
+  },
+  "homepage": "https://github.com/DanTylkowski/gulp-dabbling#readme",
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-filter": "^2.0.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-sourcemaps": "^1.5.2",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.1"
+  }
+}
