@@ -143,7 +143,7 @@ module.exports = {
 			recursive: true,
 			clean: true,
 			exclude: [ '.DS_Store' ],
-			include: []
+			include: [ ]
 		}
 	},
 	deploy: {
