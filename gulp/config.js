@@ -147,7 +147,7 @@ module.exports = {
 		}
 	},
 	deploy: {
-		path: 'play/', //ftpProjectPath,
+		path: ftpProjectPath,
 		globs: [
 			prodAssets + '/css/**',
 			prodAssets + '/js/**',
