@@ -142,5 +142,12 @@ module.exports = {
 			exclude: [ '.DS_Store' ],
 			include: []
 		}
+	},
+	upload: {
+		globs: [
+			prodAssets + '/css/**',
+			prodAssets + '/js/**',
+			prodAssets + '/images/**'
+		]
 	}
 };

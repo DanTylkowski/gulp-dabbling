@@ -30,3 +30,4 @@ node_modules
 
 gulp-tutorial-master
 build
+server-creds.js
