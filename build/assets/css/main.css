@@ -1,5 +1,5 @@
 #main-container {
-  background-image: url("/src/assets/images/480.jpg"); }
+  background-image: url("/build/assets/images/480.jpg"); }
   #main-container .grid-container {
     display: -webkit-box;
     display: -webkit-flex;

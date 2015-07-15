@@ -122,7 +122,7 @@ module.exports = {
 		dest: prod,
 		options: {
 			dirReplacements: {
-				'/src': projectFolder
+				'/build': projectFolder
 			}
 		}
 	},
