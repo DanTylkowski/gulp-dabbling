@@ -6,8 +6,11 @@ var prod = build + '/prod';
 var devAssets = build + '/assets';
 var prodAssets = prod + '/assets';
 
-var cdnBase = '//i.annihil.us/u/prod/marvel/html_blocks_assets';
-var projectFolder = cdnBase + '/new-project';
+var projectFolder = 'new-project';
+var cdnBase = '//i.annihil.us';
+var cdnPath = '/u/prod/marvel/html_blocks_assets';
+var cdnProjectPath = cdnBase + cdnPath + '/' + projectFolder;
+var ftpProjectPath = cdnPath + '/' + projectFolder;
 
 module.exports = {
 	delete: {
@@ -122,7 +125,7 @@ module.exports = {
 		dest: prod,
 		options: {
 			dirReplacements: {
-				'/build': projectFolder
+				'/build': cdnProjectPath
 			}
 		}
 	},
@@ -143,11 +146,16 @@ module.exports = {
 			include: []
 		}
 	},
-	upload: {
+	deploy: {
+		path: 'play/', //ftpProjectPath,
 		globs: [
 			prodAssets + '/css/**',
 			prodAssets + '/js/**',
 			prodAssets + '/images/**'
-		]
+		],
+		options: {
+			base: './build/prod', 
+			buffer: false
+		}
 	}
 };
