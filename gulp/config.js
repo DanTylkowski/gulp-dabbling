@@ -129,23 +129,6 @@ module.exports = {
 			}
 		}
 	},
-	rsync: { // Dummy data, will configure later
-		src: prod + '/**',
-		options: {
-			destination: '~/path/to/my/website/root/',
-			root: prod,
-			hostname: 'mydomain.com',
-			username: 'user',
-			incremental: true,
-			progress: true,
-			relative: true,
-			emptyDirectories: true,
-			recursive: true,
-			clean: true,
-			exclude: [ '.DS_Store' ],
-			include: [ ]
-		}
-	},
 	deploy: {
 		path: ftpProjectPath,
 		globs: [
@@ -154,7 +137,7 @@ module.exports = {
 			prodAssets + '/images/**'
 		],
 		options: {
-			base: './build/prod', 
+			base: './build/prod',
 			buffer: false
 		}
 	}

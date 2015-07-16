@@ -1,9 +1,9 @@
 /*
-	this file should be saved as the 
-	git-ignored file server-creds.js 
+	this file should be saved as the
+	git-ignored file server-creds.js
 	and poulated with real serever info
 */
-var serverCreds = {
+module.exports = {
 	host: 'mywebsite.tld',
 	user: 'me',
 	password: 'mypass'
